@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 18:12:42 by tlize             #+#    #+#             */
-/*   Updated: 2026/01/13 18:22:29 by tlize            ###   ########.fr       */
+/*   Updated: 2026/01/13 18:54:48 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ public:
 	Animal(const Animal &old_animal);
 	Animal &operator=(const Animal &old_animal);
 	~Animal();
+
+	void	makeSound(void);
 protected:
 	std::string type;	
 };
