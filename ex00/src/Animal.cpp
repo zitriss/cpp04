@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 18:12:35 by tlize             #+#    #+#             */
-/*   Updated: 2026/01/13 19:04:57 by tlize            ###   ########.fr       */
+/*   Updated: 2026/01/13 19:21:54 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,29 +41,10 @@ Animal &Animal::operator=(const Animal &old_animal)
 
 Animal::~Animal(void)
 {
-	std::cout <<"Animal Destructor called" << std::endl;
+	std::cout << "Animal Destructor called" << std::endl;
 }
 
 void	Animal::makeSound(void)
 {
-	if (this->type == "Dog")
-	{
-		std::cout << "Bark !" << std::endl;
-	}
-	if (this->type == "Cat")
-	{
-		std::cout << "Meow ! ᓚᘏᗢ" << std::endl;
-	}
-	if (this->type == "Horse")
-	{
-		std::cout << "Je suis le cheval" << std::endl;
-	}
-	if (this->type == "Cow")
-	{
-		std::cout << "Bar... ahem.. Mooo" << std::endl;
-	}
-	else
-	{
-		std::cout << "No suitable sound" << std::endl;		
-	}
+	std::cout << "Animal " << this->type << " made a Sound !" << std::endl;
 }
