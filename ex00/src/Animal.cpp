@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 18:12:35 by tlize             #+#    #+#             */
-/*   Updated: 2026/01/13 19:21:54 by tlize            ###   ########.fr       */
+/*   Updated: 2026/01/19 14:46:15 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,12 @@ Animal::~Animal(void)
 	std::cout << "Animal Destructor called" << std::endl;
 }
 
-void	Animal::makeSound(void)
+std::string	Animal::getType(void) const
+{
+	return (this->type);
+}
+
+void	Animal::makeSound(void) const
 {
 	std::cout << "Animal " << this->type << " made a Sound !" << std::endl;
 }
