@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 18:12:26 by tlize             #+#    #+#             */
-/*   Updated: 2026/01/19 15:41:03 by tlize            ###   ########.fr       */
+/*   Updated: 2026/01/20 12:27:27 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,30 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    const Animal* l = i;
-    const WrongAnimal* k = new WrongCat();
+    const Animal* meta[10];
+    const Animal** copy;
+
     std::cout << std::endl;
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    std::cout << l->getType() << " " << std::endl;
-    std::cout << k->getType() << " " << std::endl;
+    for (int i = 0; i < 5; i++)
+        meta[i] = new Cat();
     std::cout << std::endl;
-    i->makeSound();
-    l->makeSound();
-    j->makeSound();
-    k->makeSound();
-    meta->makeSound();
-    delete i;
-    delete j;
-    delete meta;
-    delete k;
+    for (int i = 5; i < 10; i++)
+        meta[i] = new Dog();
+    std::cout << std::endl;
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << meta[i]->getType() << " " << std::endl;
+        meta[i]->makeSound();
+    }
+    std::cout << std::endl;
+    copy = meta;
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << copy[i]->getType() << " " << std::endl;
+        copy[i]->makeSound();
+    }
+    std::cout << std::endl;
+    for (int i = 0; i < 10; i++)
+        delete meta[i];
     return 0;
 }
