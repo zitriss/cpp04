@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 11:52:29 by tlize             #+#    #+#             */
-/*   Updated: 2026/01/20 12:24:33 by tlize            ###   ########.fr       */
+/*   Updated: 2026/01/20 15:00:55 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Cat::Cat(const Cat &old_cat)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = old_cat;
+	brain = new Brain(*old_cat.brain);
 }
 
 Cat &Cat::operator=(const Cat &old_cat)
@@ -31,7 +32,7 @@ Cat &Cat::operator=(const Cat &old_cat)
 	if (this == &old_cat)
 		return *this;
 	this->type = old_cat.type;
-	this->brain = old_cat.brain;
+	brain = new Brain(*old_cat.brain);
 	return *this;
 }
 
